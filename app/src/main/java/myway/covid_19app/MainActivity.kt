@@ -1,5 +1,6 @@
 package myway.covid_19app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -7,8 +8,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.Response
-import com.android.volley.VolleyError
-import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,46 +20,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.HORIZONTAL, false)
-        val symptomsList = ArrayList<SymptomsModel>()
+        val symptomsList = ArrayList<Model>()
         symptomsList.add(
-            SymptomsModel(
-                0,
-                "dry cough",
+            Model(
+                R.drawable.cough,
+                "Dry cough",
                 "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
             )
         )
         symptomsList.add(
-            SymptomsModel(
-                0,
-                "dry cough",
+            Model(
+                R.drawable.fever,
+                "Fever",
                 "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
             )
         )
         symptomsList.add(
-            SymptomsModel(
-                0,
-                "dry cough",
-                "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
-            )
-        )
-        symptomsList.add(
-            SymptomsModel(
-                0,
-                "dry cough",
-                "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
-            )
-        )
-        symptomsList.add(
-            SymptomsModel(
-                0,
-                "dry cough",
-                "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
-            )
-        )
-        symptomsList.add(
-            SymptomsModel(
-                0,
-                "dry cough",
+            Model(
+                R.drawable.headache,
+                "Head Ache",
                 "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
             )
         )
@@ -72,48 +50,43 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
         recyclerViewPrecautions.layoutManager =
             LinearLayoutManager(this, LinearLayout.HORIZONTAL, false)
-        val precautionsList = ArrayList<PrecautionsModel>()
+        val precautionsList = ArrayList<Model>()
         precautionsList.add(
-            PrecautionsModel(
-                0,
-                "dry cough",
+            Model(
+                R.drawable.soap,
+                "Hand Wash",
                 "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
             )
         )
         precautionsList.add(
-            PrecautionsModel(
-                0,
-                "dry cough",
+            Model(
+                R.drawable.hone,
+                "Stay Home",
                 "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
             )
         )
         precautionsList.add(
-            PrecautionsModel(
-                0,
-                "dry cough",
+            Model(
+                R.drawable.distance,
+                "Social distance",
                 "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
             )
         )
         precautionsList.add(
-            PrecautionsModel(
-                0,
-                "dry cough",
+            Model(
+                R.drawable.clean,
+                "Clean Object & Surface",
                 "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
             )
         )
         precautionsList.add(
-            PrecautionsModel(
-                0,
-                "dry cough",
-                "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
-            )
-        )
-        precautionsList.add(
-            PrecautionsModel(
-                0,
-                "dry cough",
+            Model(
+                R.drawable.cover,
+                "Avoid Touching",
                 "Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s,"
             )
         )
@@ -122,6 +95,29 @@ class MainActivity : AppCompatActivity() {
         val precautionsAdapter = PrecautionsAdapter(precautionsList)
 
         recyclerViewPrecautions.adapter = precautionsAdapter
+
+
+        txt_ViewAll_symptoms.setOnClickListener {
+            var intent = Intent(this@MainActivity, SymptomsActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+
+        txt_ViewAll_precautions.setOnClickListener {
+            var intent = Intent(this@MainActivity, PrecautionsActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+        btn_moreInfo.setOnClickListener {
+            var intent = Intent(this@MainActivity, KnowMoreActivity::class.java)
+            startActivity(intent)
+        }
 
         getGlobalData()
     }

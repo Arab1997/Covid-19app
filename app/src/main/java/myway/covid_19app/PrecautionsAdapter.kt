@@ -2,10 +2,11 @@ package myway.covid_19app
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PrecautionsAdapter(var precautionsList: ArrayList<PrecautionsModel>) :
+class PrecautionsAdapter(var precautionsList: ArrayList<Model>) :
     RecyclerView.Adapter<PrecautionsAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PrecautionsAdapter.ViewHolder {
 
@@ -23,10 +24,15 @@ class PrecautionsAdapter(var precautionsList: ArrayList<PrecautionsModel>) :
     }
 
     class ViewHolder(inflater: LayoutInflater, viewGroup: ViewGroup) :
-        RecyclerView.ViewHolder(inflater.inflate(R.layout.item_precautions, viewGroup, false)) {
-        fun bind(precautionsModel: PrecautionsModel) {
-            val precautionsText = itemView.findViewById<TextView>(R.id.textView_precautions)
-            precautionsText.text = precautionsModel.precautionsTextView
+        RecyclerView.ViewHolder(inflater.inflate(R.layout.item_symptoms, viewGroup, false)) {
+        fun bind(precautionsModel: Model) {
+            val symptomsText = itemView.findViewById<TextView>(R.id.txt_Symptoms)
+            val symptomsTextDetail = itemView.findViewById<TextView>(R.id.txt_Symptoms_detail)
+            val imageView = itemView.findViewById<ImageView>(R.id.imageView_symptoms)
+
+            imageView.setImageResource(precautionsModel.imageView)
+            symptomsText.text = precautionsModel.symptomsTextView
+            symptomsTextDetail.text = precautionsModel.symptomsDetail
         }
     }
 }

@@ -24,6 +24,7 @@
             android:padding="8dp">
 
             <ImageView
+                android:id="@+id/imageView_symptoms"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
