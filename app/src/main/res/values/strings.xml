@@ -242,4 +242,5 @@
     <string name="tablet_support_description">This app is only available for smartphones because the app is only effective if you have it on a device that is with you all the time when you go out. Please install the app on your smartphone.</string>
     <string name="about_covid">Чаще всего вирус попадает на слизистые оболочки носа, глаз, на руки или другие предметы (платок, перчатки) после касания объектов (животных, мяса, рыбы, дверных ручек, поручней), загрязненные выделениями из дыхательных путей больного или инфицированного.</string>
     <string name="covid_name">COVID-19</string>
+    <string name="lorem">Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
 </resources>

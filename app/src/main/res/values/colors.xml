@@ -18,12 +18,17 @@
     <color name="amber">#FFB81C</color>
     <color name="divider">#1F000000</color>-->
     <color name="colorPrimary">#5560F0</color>
+    <color name="colorPrimaryLight">#F75586F1</color>
     <color name="colorPrimaryDark">#5560F0</color>
+    <color name="colorDarkBlue">#1B259E</color>
+    <color name="colorLightBlue">#8F95E3</color>
     <color name="colorAccent">#E8E8E8</color>
     <color name="colorWhite">#fff</color>
     <color name="colorBlack">#000000</color>
     <color name="colorGrey">#838282</color>
+    <color name="colorDarkGrey">#445278</color>
     <color name="colorGrey2">#B5A0A0</color>
     <color name="colorRed">#DA0202</color>
+    <color name="colorLightRed">#E87979</color>
     <color name="colorGreen">#4CAF50</color>
 </resources>
